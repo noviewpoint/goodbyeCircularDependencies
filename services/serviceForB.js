@@ -1,15 +1,17 @@
 const dataHandlerForB = require("../dataHandlers/dataHandlerForB");
 const GenericService = require("./GenericService");
+const helpers = require("../helpers");
 const ServiceForB = class extends GenericService {
 	async do() {
-		return this.dataHandler.model.test;
+		await helpers.sleep(200);
+		return this.dataHandler.model;
 	}
 
 	async doACB() {
 		const a = await this.serviceForA.do();
 		const c = await this.serviceForC.do();
 		const b = await this.do();
-		return `${a} ${c} ${b}`;
+		return `${a.test} ${c.test} ${b.test} from service`;
 	}
 };
 module.exports = new ServiceForB(dataHandlerForB);

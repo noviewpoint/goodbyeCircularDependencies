@@ -11,13 +11,28 @@ serviceForB.serviceForC = serviceForC;
 serviceForC.serviceForA = serviceForA;
 serviceForC.serviceForB = serviceForB;
 
+const hookForA = require("./hooks/hookForA");
+const hookForB = require("./hooks/hookForB");
+const hookForC = require("./hooks/hookForC");
+hookForA.serviceForA = serviceForB;
+hookForA.serviceForB = serviceForB;
+hookForA.serviceForC = serviceForC;
+hookForB.serviceForA = serviceForB;
+hookForB.serviceForB = serviceForB;
+hookForB.serviceForC = serviceForC;
+hookForC.serviceForA = serviceForB;
+hookForC.serviceForB = serviceForB;
+hookForC.serviceForC = serviceForC;
+
+const db = require("./db");
+
 const init = async () => {
 	const a = await serviceForA.do();
-	console.log(a);
+	console.log(a.test);
 	const b = await serviceForB.do();
-	console.log(b);
+	console.log(b.test);
 	const c = await serviceForC.do();
-	console.log(c);
+	console.log(c.test);
 
 	const bca = await serviceForA.doBCA();
 	console.log(bca);
@@ -25,6 +40,13 @@ const init = async () => {
 	console.log(acb);
 	const abc = await serviceForC.doABC();
 	console.log(abc);
+
+	const bca_ = await a.do();
+	console.log(bca_);
+	const acb_ = await b.do();
+	console.log(acb_);
+	const abc_ = await c.do();
+	console.log(abc_);
 };
 
 init();
