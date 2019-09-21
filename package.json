@@ -1,19 +1,21 @@
 {
-  "name": "goodbyecirculardependenciesproject",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generateDependencyGraph": "madge . --image dependencyGraph.svg --layout dot"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "lodash.get": "^4.4.2",
-    "mongoose": "^5.7.1"
-  },
-  "devDependencies": {
-    "madge": "^3.4.4"
-  }
+	"name": "goodbyecirculardependenciesproject",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"generateDependencyGraph": "madge . --image dependencyGraph.svg --layout dot",
+		"prettier": "prettier --print-width 160 --write **/*.{js,json}"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"lodash.get": "^4.4.2",
+		"mongoose": "^5.7.1"
+	},
+	"devDependencies": {
+		"madge": "^3.4.4",
+		"prettier": "^1.18.2"
+	}
 }

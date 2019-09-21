@@ -7,7 +7,7 @@ class EnumEventEmitter extends EventEmitter {
 			eventA: "a",
 			eventB: "b",
 			eventC: "c"
-        };
+		};
 	}
 }
 

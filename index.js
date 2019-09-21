@@ -12,21 +12,19 @@ serviceForC.serviceForA = serviceForA;
 serviceForC.serviceForB = serviceForB;
 
 const init = async () => {
-    const a = await serviceForA.do();
-    console.log(a);
-    const b = await serviceForB.do();
-    console.log(b);
-    const c = await serviceForC.do();
-    console.log(c);
+	const a = await serviceForA.do();
+	console.log(a);
+	const b = await serviceForB.do();
+	console.log(b);
+	const c = await serviceForC.do();
+	console.log(c);
 
-    const bca = await serviceForA.doBCA();
-    console.log(bca);
-    const acb = await serviceForB.doACB();
-    console.log(acb);
-    const abc = await serviceForC.doABC();
-    console.log(abc);
-
-
+	const bca = await serviceForA.doBCA();
+	console.log(bca);
+	const acb = await serviceForB.doACB();
+	console.log(acb);
+	const abc = await serviceForC.doABC();
+	console.log(abc);
 };
 
 init();
