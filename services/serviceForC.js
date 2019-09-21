@@ -7,8 +7,8 @@ const ServiceForC = class extends GenericService {
     }
 
     async doABC() {
-        const a = await serviceForA.do();
-        const b = await serviceForB.do();
+        const a = await this.serviceForA.do();
+        const b = await this.serviceForB.do();
         const c = await this.do();
         return `${a} ${b} ${c}`;
     }
@@ -17,5 +17,5 @@ const ServiceForC = class extends GenericService {
 module.exports = new ServiceForC(dataHandlerForC);
 
 // circulars:
-const serviceForA = require("./serviceForA");
-const serviceForB = require("./serviceForB");
+// const serviceForA = require("./serviceForA");
+// const serviceForB = require("./serviceForB");

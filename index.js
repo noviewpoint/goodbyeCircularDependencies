@@ -4,6 +4,12 @@ require("./event");
 const serviceForA = require("./services/serviceForA");
 const serviceForB = require("./services/serviceForB");
 const serviceForC = require("./services/serviceForC");
+serviceForA.serviceForB = serviceForB;
+serviceForA.serviceForC = serviceForC;
+serviceForB.serviceForA = serviceForA;
+serviceForB.serviceForC = serviceForC;
+serviceForC.serviceForA = serviceForA;
+serviceForC.serviceForB = serviceForB;
 
 const init = async () => {
     const a = await serviceForA.do();
