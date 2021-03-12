@@ -15,7 +15,7 @@
 		"mongoose": "^5.7.1"
 	},
 	"devDependencies": {
-		"madge": "^3.4.4",
+		"madge": "^4.0.1",
 		"prettier": "^1.18.2"
 	}
 }
